@@ -1,0 +1,244 @@
+2025-09-04 12:03:52,837 - INFO - Logging setup complete. Log file will be saved to: /Users/adarshainamdar/Documents/Major_Project/outputs/logs/training.log
+2025-09-04 12:03:59,123 - INFO - Starting image preprocessing...
+2025-09-04 12:03:59,126 - INFO - Processing class: ALL, 0 images found.
+2025-09-04 12:03:59,129 - INFO - Processing class: AML, 0 images found.
+2025-09-04 12:03:59,133 - INFO - Processing class: CLL, 0 images found.
+2025-09-04 12:03:59,135 - INFO - Processing class: CML, 0 images found.
+2025-09-04 12:03:59,137 - INFO - Image preprocessing complete.
+2025-09-04 12:04:03,408 - INFO - Splitting data into train, validation, and test sets.
+2025-09-04 12:04:03,412 - INFO - ALL: 224 train, 48 val, 48 test
+2025-09-04 12:04:03,565 - INFO - AML: 224 train, 48 val, 48 test
+2025-09-04 12:04:03,733 - INFO - CLL: 224 train, 48 val, 48 test
+2025-09-04 12:04:03,887 - INFO - CML: 224 train, 48 val, 48 test
+2025-09-04 12:04:04,034 - INFO - Data splitting complete.
+2025-09-04 12:04:06,226 - INFO - Training samples: 896
+2025-09-04 12:04:06,228 - INFO - Validation samples: 192
+2025-09-04 12:04:06,228 - INFO - Test samples: 192
+2025-09-04 12:04:06,229 - INFO - Classes: ['ALL', 'AML', 'CLL', 'CML']
+2025-09-04 12:04:09,309 - INFO - Starting baseline model training for 10 epochs on cpu.
+2025-09-04 12:05:03,795 - INFO - Epoch 1/10 | Train Loss: 1.1471 Acc: 0.5056 | Val Loss: 1.2415 Acc: 0.5260
+2025-09-04 12:05:03,833 - INFO - New best model saved with validation accuracy: 0.5260
+2025-09-04 12:05:58,196 - INFO - Epoch 2/10 | Train Loss: 0.8537 Acc: 0.6239 | Val Loss: 0.7685 Acc: 0.7031
+2025-09-04 12:05:58,236 - INFO - New best model saved with validation accuracy: 0.7031
+2025-09-04 12:07:26,619 - INFO - Epoch 3/10 | Train Loss: 0.7270 Acc: 0.6830 | Val Loss: 0.8287 Acc: 0.6250
+2025-09-04 12:08:19,337 - INFO - Epoch 4/10 | Train Loss: 0.7722 Acc: 0.6685 | Val Loss: 1.1700 Acc: 0.5156
+2025-09-04 12:09:12,202 - INFO - Epoch 5/10 | Train Loss: 0.7238 Acc: 0.6931 | Val Loss: 0.6212 Acc: 0.7552
+2025-09-04 12:09:12,240 - INFO - New best model saved with validation accuracy: 0.7552
+2025-09-04 12:12:41,821 - INFO - Epoch 6/10 | Train Loss: 0.6629 Acc: 0.7098 | Val Loss: 1.3005 Acc: 0.5938
+2025-09-04 12:13:34,713 - INFO - Epoch 7/10 | Train Loss: 0.6045 Acc: 0.7321 | Val Loss: 0.8196 Acc: 0.6927
+2025-09-04 12:14:27,704 - INFO - Epoch 8/10 | Train Loss: 0.5712 Acc: 0.7600 | Val Loss: 0.6746 Acc: 0.7188
+2025-09-04 12:16:03,023 - INFO - Epoch 9/10 | Train Loss: 0.5502 Acc: 0.7690 | Val Loss: 0.8344 Acc: 0.6354
+2025-09-04 12:16:56,036 - INFO - Epoch 10/10 | Train Loss: 0.5177 Acc: 0.7946 | Val Loss: 0.8000 Acc: 0.7240
+2025-09-04 12:16:56,036 - INFO - Finished baseline model training.
+2025-09-04 12:17:30,211 - INFO - Multi-task model and datasets created.
+2025-09-04 12:17:33,554 - INFO - Starting multi-task model training for 10 epochs on cpu.
+2025-09-04 12:18:26,478 - INFO - Epoch 1/10 | Train Loss: 1.6165 | Val Type Acc: 0.6250, Val Grade Acc: 0.6302
+2025-09-04 12:18:26,543 - INFO - New best multi-task model saved with validation type accuracy: 0.6250
+2025-09-04 12:19:20,274 - INFO - Epoch 2/10 | Train Loss: 1.2147 | Val Type Acc: 0.6094, Val Grade Acc: 0.6198
+2025-09-04 12:20:14,105 - INFO - Epoch 3/10 | Train Loss: 1.2620 | Val Type Acc: 0.6406, Val Grade Acc: 0.6667
+2025-09-04 12:20:14,149 - INFO - New best multi-task model saved with validation type accuracy: 0.6406
+2025-09-04 12:21:07,063 - INFO - Epoch 4/10 | Train Loss: 1.0992 | Val Type Acc: 0.6562, Val Grade Acc: 0.6562
+2025-09-04 12:21:07,100 - INFO - New best multi-task model saved with validation type accuracy: 0.6562
+2025-09-04 12:21:59,367 - INFO - Epoch 5/10 | Train Loss: 1.0983 | Val Type Acc: 0.6198, Val Grade Acc: 0.6458
+2025-09-04 12:22:52,340 - INFO - Epoch 6/10 | Train Loss: 1.0465 | Val Type Acc: 0.6979, Val Grade Acc: 0.7083
+2025-09-04 12:22:52,377 - INFO - New best multi-task model saved with validation type accuracy: 0.6979
+2025-09-04 12:23:46,123 - INFO - Epoch 7/10 | Train Loss: 1.0156 | Val Type Acc: 0.6250, Val Grade Acc: 0.6510
+2025-09-04 12:24:38,852 - INFO - Epoch 8/10 | Train Loss: 0.8686 | Val Type Acc: 0.6302, Val Grade Acc: 0.6406
+2025-09-04 12:25:31,079 - INFO - Epoch 9/10 | Train Loss: 1.0098 | Val Type Acc: 0.7240, Val Grade Acc: 0.7240
+2025-09-04 12:25:31,117 - INFO - New best multi-task model saved with validation type accuracy: 0.7240
+2025-09-04 12:26:24,086 - INFO - Epoch 10/10 | Train Loss: 0.9283 | Val Type Acc: 0.5990, Val Grade Acc: 0.5885
+2025-09-04 12:26:24,087 - INFO - Finished multi-task model training.
+2025-09-04 12:26:53,902 - INFO - --- Evaluating Baseline Model on Test Set ---
+2025-09-04 12:26:58,192 - INFO - --- Classification Report ---
+2025-09-04 12:26:58,197 - INFO - 
+              precision    recall  f1-score   support
+
+         ALL       0.96      1.00      0.98        48
+         AML       0.67      0.42      0.51        48
+         CLL       0.71      0.52      0.60        48
+         CML       0.45      0.73      0.56        48
+
+    accuracy                           0.67       192
+   macro avg       0.70      0.67      0.66       192
+weighted avg       0.70      0.67      0.66       192
+
+2025-09-04 12:27:10,917 - INFO - --- Starting Genetic Algorithm for Hyperparameter Tuning ---
+2025-09-04 12:27:10,918 - INFO - GA Evaluating - LR: 0.004553, WD: 0.006732
+2025-09-04 12:27:10,919 - INFO -   -> Achieved fitness (mock): 0.3044
+2025-09-04 12:27:10,919 - INFO - GA Evaluating - LR: 0.006727, WD: 0.005850
+2025-09-04 12:27:10,920 - INFO -   -> Achieved fitness (mock): 0.4926
+2025-09-04 12:27:10,920 - INFO - GA Evaluating - LR: 0.008226, WD: 0.009404
+2025-09-04 12:27:10,920 - INFO -   -> Achieved fitness (mock): 0.0972
+2025-09-04 12:27:10,921 - INFO - GA Evaluating - LR: 0.001092, WD: 0.002346
+2025-09-04 12:27:10,921 - INFO -   -> Achieved fitness (mock): 0.8873
+2025-09-04 12:27:10,922 - INFO - GA Evaluating - LR: 0.000260, WD: 0.008844
+2025-09-04 12:27:10,922 - INFO -   -> Achieved fitness (mock): 0.1357
+2025-09-04 12:27:10,923 - INFO - GA Evaluating - LR: 0.005618, WD: 0.009153
+2025-09-04 12:27:10,923 - INFO -   -> Achieved fitness (mock): 0.4536
+2025-09-04 12:27:10,923 - INFO - GA Evaluating - LR: 0.002221, WD: 0.000642
+2025-09-04 12:27:10,924 - INFO -   -> Achieved fitness (mock): 0.6705
+2025-09-04 12:27:10,924 - INFO - GA Evaluating - LR: 0.008240, WD: 0.009095
+2025-09-04 12:27:10,924 - INFO -   -> Achieved fitness (mock): 0.7431
+2025-09-04 12:27:10,925 - INFO - GA Evaluating - LR: 0.003029, WD: 0.004089
+2025-09-04 12:27:10,925 - INFO -   -> Achieved fitness (mock): 0.9460
+2025-09-04 12:27:10,926 - INFO - GA Evaluating - LR: 0.001406, WD: 0.009463
+2025-09-04 12:27:10,926 - INFO -   -> Achieved fitness (mock): 0.4191
+2025-09-04 12:27:10,927 - INFO - GA Evaluating - LR: 0.000723, WD: 0.005960
+2025-09-04 12:27:10,927 - INFO -   -> Achieved fitness (mock): 0.5215
+2025-09-04 12:27:10,927 - INFO - GA Evaluating - LR: 0.010971, WD: 0.003776
+2025-09-04 12:27:10,928 - INFO -   -> Achieved fitness (mock): 0.4580
+2025-09-04 12:27:10,928 - INFO - GA Evaluating - LR: 0.000955, WD: 0.009737
+2025-09-04 12:27:10,928 - INFO -   -> Achieved fitness (mock): 0.9640
+2025-09-04 12:27:10,929 - INFO - GA Evaluating - LR: 0.005756, WD: 0.001763
+2025-09-04 12:27:10,929 - INFO -   -> Achieved fitness (mock): 0.0608
+2025-09-04 12:27:10,929 - INFO - GA Evaluating - LR: 0.003365, WD: 0.002620
+2025-09-04 12:27:10,930 - INFO -   -> Achieved fitness (mock): 0.4790
+2025-09-04 12:27:10,930 - INFO - GA Evaluating - LR: 0.000629, WD: 0.003815
+2025-09-04 12:27:10,931 - INFO -   -> Achieved fitness (mock): 0.4016
+2025-09-04 12:27:10,931 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,931 - INFO -   -> Achieved fitness (mock): 0.6861
+2025-09-04 12:27:10,931 - INFO - GA Evaluating - LR: 0.002561, WD: 0.003188
+2025-09-04 12:27:10,932 - INFO -   -> Achieved fitness (mock): 0.4903
+2025-09-04 12:27:10,932 - INFO - GA Evaluating - LR: 0.001092, WD: 0.002346
+2025-09-04 12:27:10,932 - INFO -   -> Achieved fitness (mock): 0.9097
+2025-09-04 12:27:10,933 - INFO - GA Evaluating - LR: 0.005618, WD: 0.009153
+2025-09-04 12:27:10,933 - INFO -   -> Achieved fitness (mock): 0.0735
+2025-09-04 12:27:10,934 - INFO - GA Evaluating - LR: 0.014075, WD: 0.005884
+2025-09-04 12:27:10,934 - INFO -   -> Achieved fitness (mock): 0.3516
+2025-09-04 12:27:10,935 - INFO - GA Evaluating - LR: -0.002148, WD: 0.007630
+2025-09-04 12:27:10,935 - INFO -   -> Achieved fitness (mock): 0.5779
+2025-09-04 12:27:10,936 - INFO - GA Evaluating - LR: 0.001092, WD: 0.002346
+2025-09-04 12:27:10,936 - INFO -   -> Achieved fitness (mock): 0.2127
+2025-09-04 12:27:10,936 - INFO - GA Evaluating - LR: 0.001092, WD: 0.002346
+2025-09-04 12:27:10,937 - INFO -   -> Achieved fitness (mock): 0.6567
+2025-09-04 12:27:10,937 - INFO - GA Evaluating - LR: 0.001148, WD: -0.001000
+2025-09-04 12:27:10,937 - INFO -   -> Achieved fitness (mock): 0.2242
+2025-09-04 12:27:10,938 - INFO - GA Evaluating - LR: 0.000697, WD: 0.003144
+2025-09-04 12:27:10,938 - INFO -   -> Achieved fitness (mock): 0.1082
+2025-09-04 12:27:10,938 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,939 - INFO -   -> Achieved fitness (mock): 0.8454
+2025-09-04 12:27:10,939 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,939 - INFO -   -> Achieved fitness (mock): 0.3676
+2025-09-04 12:27:10,940 - INFO - GA Evaluating - LR: 0.001155, WD: 0.002032
+2025-09-04 12:27:10,940 - INFO -   -> Achieved fitness (mock): 0.0548
+2025-09-04 12:27:10,941 - INFO - GA Evaluating - LR: 0.000690, WD: 0.000113
+2025-09-04 12:27:10,941 - INFO -   -> Achieved fitness (mock): 0.2044
+2025-09-04 12:27:10,941 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,942 - INFO -   -> Achieved fitness (mock): 0.9453
+2025-09-04 12:27:10,942 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,942 - INFO -   -> Achieved fitness (mock): 0.7673
+2025-09-04 12:27:10,943 - INFO - GA Evaluating - LR: 0.001092, WD: 0.002346
+2025-09-04 12:27:10,943 - INFO -   -> Achieved fitness (mock): 0.7642
+2025-09-04 12:27:10,944 - INFO - GA Evaluating - LR: -0.002197, WD: 0.000613
+2025-09-04 12:27:10,944 - INFO -   -> Achieved fitness (mock): 0.2894
+2025-09-04 12:27:10,944 - INFO - GA Evaluating - LR: 0.003414, WD: 0.009636
+2025-09-04 12:27:10,944 - INFO -   -> Achieved fitness (mock): 0.1200
+2025-09-04 12:27:10,945 - INFO - GA Evaluating - LR: 0.000884, WD: 0.000685
+2025-09-04 12:27:10,945 - INFO -   -> Achieved fitness (mock): 0.4974
+2025-09-04 12:27:10,946 - INFO - GA Evaluating - LR: 0.000961, WD: 0.001460
+2025-09-04 12:27:10,946 - INFO -   -> Achieved fitness (mock): 0.4307
+2025-09-04 12:27:10,946 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,947 - INFO -   -> Achieved fitness (mock): 0.6811
+2025-09-04 12:27:10,947 - INFO - GA Evaluating - LR: 0.000752, WD: -0.000201
+2025-09-04 12:27:10,947 - INFO -   -> Achieved fitness (mock): 0.8820
+2025-09-04 12:27:10,947 - INFO - GA Evaluating - LR: 0.002220, WD: 0.000196
+2025-09-04 12:27:10,948 - INFO -   -> Achieved fitness (mock): 0.6430
+2025-09-04 12:27:10,948 - INFO - GA Evaluating - LR: -0.003324, WD: 0.002763
+2025-09-04 12:27:10,949 - INFO -   -> Achieved fitness (mock): 0.9865
+2025-09-04 12:27:10,949 - INFO - GA Evaluating - LR: -0.001346, WD: 0.002346
+2025-09-04 12:27:10,949 - INFO -   -> Achieved fitness (mock): 0.3232
+2025-09-04 12:27:10,949 - INFO - GA Evaluating - LR: 0.001007, WD: 0.001460
+2025-09-04 12:27:10,950 - INFO -   -> Achieved fitness (mock): 0.9710
+2025-09-04 12:27:10,950 - INFO - GA Evaluating - LR: -0.002521, WD: 0.003316
+2025-09-04 12:27:10,950 - INFO -   -> Achieved fitness (mock): 0.3161
+2025-09-04 12:27:10,951 - INFO - GA Evaluating - LR: 0.003689, WD: -0.000083
+2025-09-04 12:27:10,952 - INFO -   -> Achieved fitness (mock): 0.4398
+2025-09-04 12:27:10,952 - INFO - GA Evaluating - LR: 0.003689, WD: -0.000873
+2025-09-04 12:27:10,952 - INFO -   -> Achieved fitness (mock): 0.0524
+2025-09-04 12:27:10,952 - INFO - GA Evaluating - LR: 0.001134, WD: 0.002791
+2025-09-04 12:27:10,953 - INFO -   -> Achieved fitness (mock): 0.6309
+2025-09-04 12:27:10,956 - INFO - GA Evaluating - LR: 0.000711, WD: -0.000646
+2025-09-04 12:27:10,960 - INFO -   -> Achieved fitness (mock): 0.3346
+2025-09-04 12:27:10,960 - INFO - --- Genetic Algorithm Finished ---
+2025-09-04 12:27:10,961 - INFO - Best Individual's Fitness = 0.9865
+2025-09-04 12:27:10,962 - INFO - Optimal Learning Rate = -0.003324
+2025-09-04 12:27:10,963 - INFO - Optimal Weight Decay = 0.002763
+2025-09-04 12:27:12,766 - INFO - --- Starting Genetic Algorithm for Hyperparameter Tuning ---
+2025-09-04 12:27:12,767 - INFO - GA Evaluating - LR: 0.003304, WD: 0.005584
+2025-09-04 12:27:12,768 - INFO -   -> Achieved fitness (mock): 0.1278
+2025-09-04 12:27:12,768 - INFO - GA Evaluating - LR: 0.003872, WD: 0.002527
+2025-09-04 12:27:12,769 - INFO -   -> Achieved fitness (mock): 0.7028
+2025-09-04 12:27:12,770 - INFO - GA Evaluating - LR: 0.008517, WD: 0.009644
+2025-09-04 12:27:12,770 - INFO -   -> Achieved fitness (mock): 0.9471
+2025-09-04 12:27:12,771 - INFO - GA Evaluating - LR: 0.006031, WD: 0.001512
+2025-09-04 12:27:12,771 - INFO -   -> Achieved fitness (mock): 0.9972
+2025-09-04 12:27:12,772 - INFO - GA Evaluating - LR: 0.000824, WD: 0.006639
+2025-09-04 12:27:12,772 - INFO -   -> Achieved fitness (mock): 0.9124
+2025-09-04 12:27:12,773 - INFO - GA Evaluating - LR: 0.009168, WD: 0.003109
+2025-09-04 12:27:12,773 - INFO -   -> Achieved fitness (mock): 0.0935
+2025-09-04 12:27:12,774 - INFO - GA Evaluating - LR: 0.006564, WD: 0.006625
+2025-09-04 12:27:12,775 - INFO -   -> Achieved fitness (mock): 0.6705
+2025-09-04 12:27:12,775 - INFO - GA Evaluating - LR: 0.001298, WD: 0.007091
+2025-09-04 12:27:12,776 - INFO -   -> Achieved fitness (mock): 0.5085
+2025-09-04 12:27:12,777 - INFO - GA Evaluating - LR: 0.000856, WD: 0.005594
+2025-09-04 12:27:12,777 - INFO -   -> Achieved fitness (mock): 0.0182
+2025-09-04 12:27:12,778 - INFO - GA Evaluating - LR: 0.006438, WD: 0.003291
+2025-09-04 12:27:12,778 - INFO -   -> Achieved fitness (mock): 0.3089
+2025-09-04 12:27:12,779 - INFO - GA Evaluating - LR: 0.006031, WD: 0.001512
+2025-09-04 12:27:12,780 - INFO -   -> Achieved fitness (mock): 0.9343
+2025-09-04 12:27:12,780 - INFO - GA Evaluating - LR: 0.008517, WD: 0.009644
+2025-09-04 12:27:12,781 - INFO -   -> Achieved fitness (mock): 0.7114
+2025-09-04 12:27:12,781 - INFO - GA Evaluating - LR: 0.005305, WD: 0.007163
+2025-09-04 12:27:12,782 - INFO -   -> Achieved fitness (mock): 0.5159
+2025-09-04 12:27:12,782 - INFO - GA Evaluating - LR: 0.009349, WD: 0.005130
+2025-09-04 12:27:12,782 - INFO -   -> Achieved fitness (mock): 0.5750
+2025-09-04 12:27:12,782 - INFO - GA Evaluating - LR: 0.005199, WD: 0.006026
+2025-09-04 12:27:12,783 - INFO -   -> Achieved fitness (mock): 0.7185
+2025-09-04 12:27:12,783 - INFO - GA Evaluating - LR: 0.006031, WD: 0.001512
+2025-09-04 12:27:12,783 - INFO -   -> Achieved fitness (mock): 0.2913
+2025-09-04 12:27:12,784 - INFO - GA Evaluating - LR: 0.008517, WD: 0.009644
+2025-09-04 12:27:12,784 - INFO -   -> Achieved fitness (mock): 0.0016
+2025-09-04 12:27:12,784 - INFO - GA Evaluating - LR: 0.008517, WD: 0.009644
+2025-09-04 12:27:12,785 - INFO -   -> Achieved fitness (mock): 0.3528
+2025-09-04 12:27:12,786 - INFO - GA Evaluating - LR: 0.005860, WD: -0.000122
+2025-09-04 12:27:12,786 - INFO -   -> Achieved fitness (mock): 0.5707
+2025-09-04 12:27:12,787 - INFO - GA Evaluating - LR: 0.008688, WD: 0.011279
+2025-09-04 12:27:12,787 - INFO -   -> Achieved fitness (mock): 0.1873
+2025-09-04 12:27:12,788 - INFO - GA Evaluating - LR: 0.005199, WD: 0.006026
+2025-09-04 12:27:12,788 - INFO -   -> Achieved fitness (mock): 0.0478
+2025-09-04 12:27:12,788 - INFO - GA Evaluating - LR: 0.006144, WD: 0.000473
+2025-09-04 12:27:12,789 - INFO -   -> Achieved fitness (mock): 0.6557
+2025-09-04 12:27:12,789 - INFO - GA Evaluating - LR: 0.005086, WD: 0.007066
+2025-09-04 12:27:12,790 - INFO -   -> Achieved fitness (mock): 0.2732
+2025-09-04 12:27:12,790 - INFO - GA Evaluating - LR: 0.008517, WD: 0.009644
+2025-09-04 12:27:12,791 - INFO -   -> Achieved fitness (mock): 0.7993
+2025-09-04 12:27:12,791 - INFO - GA Evaluating - LR: 0.006191, WD: 0.001762
+2025-09-04 12:27:12,792 - INFO -   -> Achieved fitness (mock): 0.7631
+2025-09-04 12:27:12,793 - INFO - GA Evaluating - LR: 0.005984, WD: 0.000223
+2025-09-04 12:27:12,793 - INFO -   -> Achieved fitness (mock): 0.5739
+2025-09-04 12:27:12,795 - INFO - GA Evaluating - LR: 0.009751, WD: 0.001912
+2025-09-04 12:27:12,795 - INFO -   -> Achieved fitness (mock): 0.5295
+2025-09-04 12:27:12,795 - INFO - GA Evaluating - LR: 0.004797, WD: 0.009245
+2025-09-04 12:27:12,796 - INFO -   -> Achieved fitness (mock): 0.3980
+2025-09-04 12:27:12,796 - INFO - GA Evaluating - LR: 0.006484, WD: 0.000473
+2025-09-04 12:27:12,796 - INFO -   -> Achieved fitness (mock): 0.6496
+2025-09-04 12:27:12,797 - INFO - GA Evaluating - LR: 0.006678, WD: 0.007566
+2025-09-04 12:27:12,797 - INFO -   -> Achieved fitness (mock): 0.2496
+2025-09-04 12:27:12,797 - INFO - GA Evaluating - LR: 0.007983, WD: 0.002551
+2025-09-04 12:27:12,798 - INFO -   -> Achieved fitness (mock): 0.1134
+2025-09-04 12:27:12,798 - INFO - GA Evaluating - LR: 0.006484, WD: 0.000473
+2025-09-04 12:27:12,798 - INFO -   -> Achieved fitness (mock): 0.6801
+2025-09-04 12:27:12,799 - INFO - GA Evaluating - LR: 0.006031, WD: 0.001512
+2025-09-04 12:27:12,799 - INFO -   -> Achieved fitness (mock): 0.3445
+2025-09-04 12:27:12,799 - INFO - GA Evaluating - LR: 0.006031, WD: 0.001512
+2025-09-04 12:27:12,800 - INFO -   -> Achieved fitness (mock): 0.8780
+2025-09-04 12:27:12,800 - INFO - GA Evaluating - LR: 0.006484, WD: 0.000473
+2025-09-04 12:27:12,801 - INFO -   -> Achieved fitness (mock): 0.7803
+2025-09-04 12:27:12,801 - INFO - GA Evaluating - LR: 0.006484, WD: 0.000473
+2025-09-04 12:27:12,802 - INFO -   -> Achieved fitness (mock): 0.6398
+2025-09-04 12:27:12,803 - INFO - --- Genetic Algorithm Finished ---
+2025-09-04 12:27:12,803 - INFO - Best Individual's Fitness = 0.9972
+2025-09-04 12:27:12,804 - INFO - Optimal Learning Rate = 0.006031
+2025-09-04 12:27:12,804 - INFO - Optimal Weight Decay = 0.001512
+2025-09-04 12:27:22,718 - INFO - Generating Grad-CAM visualization...
+2025-09-04 12:27:22,873 - INFO - Grad-CAM visualization generated successfully.
