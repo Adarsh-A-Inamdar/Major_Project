@@ -1,7 +1,7 @@
 # Major_Project
 ### Project Readme
 
-```markdown
+
 # Leukemia Prediction Web Application
 
 This project is a single-file web application that uses a multi-task deep learning model to predict the type and grade of leukemia from a blood cell image. The application is built with Flask on the backend and a simple, user-friendly interface on the frontend, allowing for quick and accurate predictions directly from your browser.
@@ -72,14 +72,14 @@ pip install Flask torch torchvision Pillow gunicorn
 
     ```
 
+
 ## 🖥️ Usage
 
 ### Running Locally
 
 To run the application locally, navigate to the `src` directory and execute the main file.
 
-````
-
+```
 python main.py
 
 ```
@@ -89,6 +89,7 @@ This will start the Flask development server. Open your web browser and navigate
 ### Running with Gunicorn
 
 For a production environment, you should use Gunicorn. Make sure you are in the root directory of your project and run:
+
 
 ```
 
@@ -101,4 +102,3 @@ Then, access the application at `http://127.0.0.1:8000`.
 ## ⚙️ Deployment
 
 This application is configured for easy deployment on platforms like Koyeb using the provided `requirements.txt` and `Procfile`. Simply connect your GitHub repository to your chosen platform, and it should automatically build and deploy the application.
-```
