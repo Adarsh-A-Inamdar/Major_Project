@@ -80,3 +80,5 @@
 2025-09-13 08:06:36,951 - INFO - Epoch 59/500 | Validation Acc: 0.8698
 2025-09-13 08:06:41,392 - INFO - Epoch 60/500 | Validation Acc: 0.8125
 2025-09-13 08:06:45,794 - INFO - Epoch 61/500 | Validation Acc: 0.8854
+2025-09-13 08:06:50,241 - INFO - Epoch 62/500 | Validation Acc: 0.8802
+2025-09-13 08:06:54,688 - INFO - Epoch 63/500 | Validation Acc: 0.8906
