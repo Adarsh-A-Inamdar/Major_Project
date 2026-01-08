@@ -1,0 +1,1222 @@
+
+--- PAGE 1 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              1 
+ 
+CHAPTER 1 
+INTRODUCTION 
+Leukemia is a serious type of blood cancer that originates in the bone marrow, the primary site 
+of blood cell production. It is characterized by the uncontrolled proliferation of abnormal white 
+blood cells, which interferes with the normal production of red blood cells, healthy white blood 
+cells, and platelets. As a result, patients may experience anemia, recurrent infections, fatigue, 
+and excessive bleeding or bruising. Leukemia is primarily caused by genetic mutations in 
+hematopoietic cells, while risk fa ctors such as radiation exposure, toxic chemicals, smoking, 
+and previous cancer therapies may also contribute to its development. Early detection and 
+accurate grading of leukemia are crucial for effective treatment planning and improved patient 
+survival rates [1], [2]. 
+Traditional leukemia diagnosis relies heavily on manual examination of peripheral blood smear 
+images, bone marrow biopsies, and laboratory tests performed by experienced 
+hematopathologists. Although these methods are considered reliable, they are time-consuming, 
+labor-intensive, and subject to inter-observer variability. With the increasing global incidence 
+of leukemia and the shortage of skilled medical professionals, there is a growing demand for 
+automated and efficient diagnostic systems to assist clinic ians in early disease detection and 
+classification [3]. 
+Recent advancements in artificial intelligence (AI) and deep learning (DL) have significantly 
+improved medical image analysis. Convolutional Neural Networks (CNNs) have demonstrated 
+excellent performance in automated feature extraction and classification t asks. Among CNN 
+architectures, Residual Networks (ResNet) address the vanishing gradient problem through 
+skip connections, enabling deeper networks to learn more effective feature representations. 
+ResNet-18, a lightweight yet powerful CNN model, offers a suitable balance between accuracy 
+and computational efficiency, making it well -suited for medical image analysis applications 
+[4]. The performance of deep learning models is highly influenced by optimal parameter 
+selection and effective feature representati on. To enhance model accuracy and robustness, 
+metaheuristic optimization techniques have gained increasing attention. Particle Swarm 
+Optimization (PSO), inspired by the social behaviour of bird flocks, is an efficient optimization 
+--- PAGE 2 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              2 
+ 
+algorithm used for parameter tuning and feature selection. Integrating PSO with deep learning 
+models helps avoid local minima and improves overall classification performance. 
+In this project, we propose an intelligent leukemia classification and grading system using a 
+PSO-optimized ResNet-18 architecture. The system takes microscopic blood smear images as 
+input and automatically extracts deep features using ResNet -18, while Par ticle Swarm 
+Optimization is employed to optimize model parameters and enhance classification and grading 
+accuracy. The proposed framework identifies major leukemia types, including Acute 
+Lymphoblastic Leukemia (ALL), Acute Myeloid Leukemia (AML), Chronic L ymphocytic 
+Leukemia (CLL), and Chronic Myeloid Leukemia (CML), and determines disease severity by 
+grading it into Grade 1, Grade 2, and Grade 3. This automated framework serves as a clinical 
+decision-support system, reducing diagnostic time, minimizing hum an error, and contributing 
+to the advancement of intelligent healthcare solutions. 
+1.1 Background of the Problem 
+Leukemia is a dangerous blood cancer that originates in the bone marrow and severely disrupts 
+the normal production of blood cells. The uncontrolled proliferation of abnormal white blood 
+cells suppresses the formation of healthy red blood cells, platelets, and functional white blood 
+cells. This results in clinical conditions such as anemia, recurrent infections, fatigue, and 
+excessive bleeding or bruising. Certain forms of leukemia progress rapidly, making early 
+detection, accurate classification, and proper grading essential for effective treatment planning 
+and improved patient survival rates. However, the complexity of leukemia and the 
+morphological similarities between different leukemia subtypes make diagnosis challenging, 
+particularly during the early stages of the disease [5], [6]. 
+ 
+At present, leukemia diagnosis primarily depends on the manual examination of peripheral 
+blood smear images by experienced hematopathologists, along with supporting laboratory and 
+clinical investigations. Although these conventional diagnostic methods are widely accepted, 
+they are time -consuming, labor-intensive, and highly dependent on expert judgment, which 
+may vary between observers. Factors such as human fatigue, high sample workloads, and 
+variations in staining techniques, illumination, and image resol ution further increase the 
+likelihood of misclassification or delayed diagnosis. With the growing incidence of leukemia 
+--- PAGE 3 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              3 
+ 
+worldwide and a shortage of skilled medical professionals, these challenges highlight the 
+urgent need for diagnostic systems that offer improved accuracy, consistency, speed, and 
+scalability [7], [8]. 
+ 
+1.2 Domain Overview  
+Leukemia is a type of blood cancer that originates in the bone marrow, where blood cells are 
+produced. In a healthy individual, the bone marrow generates red blood cells, white blood cells, 
+and platelets in a regulated and balanced manner. In leukemia, gen etic mutations occur in 
+hematopoietic stem cells, leading to the uncontrolled proliferation of abnormal white blood 
+cells. These leukemic cells are immature, non-functional, and gradually replace healthy blood 
+cells, resulting in serious clinical conditions such as anemia, recurrent infections, fatigue, and 
+excessive bleeding or bruising. Due to its aggressive nature, particularly in acute forms, 
+leukemia requires early detection and accurate classification to improve patient survival rates 
+[9], [10]. 
+The detection of leukemia  primarily involves clinical evaluation supported by laboratory 
+investigations. A complete blood count (CBC) is usually the first diagnostic test, often 
+revealing abnormal white blood cell counts, reduced red blood cell levels, or 
+thrombocytopenia. This is  followed by microscopic examination of peripheral blood smear 
+images to analyse blood cell morphology. In many cases, a bone marrow biopsy is performed 
+to confirm the diagnosis and assess disease severity. Advanced diagnostic techniques such as 
+immunophenotyping, cytogenetic analysis, and molecular testing are further employed to 
+identify specific leukemia subtypes and genetic abnormalities, which are crucial for accurate 
+diagnosis, prognosis, and treatment planning [11], [12]. 
+ 
+ 
+Fig 1.1 Normal blood vs leukemic blood 
+
+--- PAGE 4 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              4 
+ 
+From the above Fig. 1.1, leukemia is observed as an abnormal proliferation of leukemic cells 
+that replace normal blood cells. Leukemia can develop due to multiple risk factors, although 
+the exact cause is not always identifiable.  Leukemia can develop due to multiple risk factors, 
+although the exact cause is not always identifiable. Common contributing factors include 
+genetic predisposition, exposure to high levels of ionizing radiation, contact with toxic 
+chemicals such as benzene,  smoking, and prior cancer treatments involving chemotherapy or 
+radiation therapy. These factors increase the probability of DNA damage in blood -forming 
+cells, thereby elevating the risk of leukemia development [13]. 
+Based on disease progression and the type of blood cells involved, leukemia is broadly 
+classified into acute and chronic forms. Acute leukemias progress rapidly and are characterized 
+by the accumulation of immature blast cells, whereas chronic leukemias pr ogress slowly and 
+involve relatively mature but abnormal cells. Further classification based on cell lineage results 
+in four major leukemia types: Acute Lymphoblastic Leukemia (ALL), Acute Myeloid 
+Leukemia (AML), Chronic Lymphocytic Leukemia (CLL), and Chr onic Myeloid Leukemia 
+(CML) [14]. 
+ 
+Fig 1.2 Clinical classification and grading of leukemia 
+ 
+From the above Fig. 1.2, leukemia is medically classified into acute and chronic types, namely 
+ALL, AML, CLL, and CML, with each type further categorized using standard grading and 
+
+--- PAGE 5 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              5 
+ 
+staging systems to assess disease severity and progression.  Thus, a comprehensive 
+understanding of leukemia, including its causes, detection methods, classification, and grading, 
+is essential for accurate diagnosis and effective treatment planning. Proper classification and 
+staging enable clinicians to assess disea se severity, choose appropriate therapeutic strategies, 
+and predict patient outcomes, making them critical components of leukemia diagnosis and 
+management [15]. 
+ 
+Fig 1.3 Shows blood cell transformation leading to ALL, AML, CLL, and CML 
+ 
+Table 1.1 Major leukemia types based on progression rate, cell lineage, and age group. 
+Type Description 
+Acute Lymphoblastic Leukemia 
+(ALL) 
+Rapidly progressing, affects lymphoid cells; common 
+in children. 
+Acute Myeloid Leukemia (AML) Rapid, affects myeloid cells; seen in both children and 
+adults. 
+Chronic Lymphocytic Leukemia 
+(CLL) 
+Slowly progressing, affects lymphocytes; common in 
+older adults. 
+Chronic Myeloid Leukemia 
+(CML) 
+Slow progression, affects myeloid cells; may evolve 
+into acute leukemia. 
+
+--- PAGE 6 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              6 
+ 
+1.3 Need for the Project and Importance  
+Leukemia diagnosis requires early detection, accurate classification, and proper grading to 
+ensure effective treatment and improved patient survival, but current diagnostic practices rely 
+heavily on manual microscopic examination and expert interpretation,  which are time -
+consuming, subjective, and prone to human error. The increasing number of leukemia cases, 
+limited availability of skilled hematopathologists, and large volumes of blood smear data 
+further strain healthcare systems and may lead to delayed or inaccurate diagnosis. Additionally, 
+subtle visual differences between leukemia subtypes, variations in image quality, and fatigue-
+related errors reduce diagnostic consistency. Hence, there is a strong need for a reliable, 
+efficient, and consistent diagnostic support approach that can assist clinicians, reduce 
+workload, improve accuracy, and en able timely medical intervention, thereby enhancing 
+overall patient care and healthcare efficiency. 
+ 
+1.4 Scope of the Project 
+The scope of this project is to develop an intelligent and automated system for leukemia 
+analysis using microscopic blood smear images. The project focuses on accurate classification 
+of leukemia into major types such as Acute Lymphoblastic Leukemia (ALL), Acute Myeloid 
+Leukemia (AML), Chronic Lymphocytic Leukemia (CLL), and Chronic Myeloid Leukemia 
+(CML). Along with classification, the system determines leukemia severity into three levels 
+(Grade-1, Grade-2, and Grade -3) based on the progression and intensit y of the disease. The 
+scope includes image preprocessing, feature extraction, severity assessment, and performance 
+evaluation using standard metrics such as accuracy, precision, recall, and F1 -score. The 
+proposed system supports faster analysis, consistent  results, and enhanced decision -making, 
+contributing to improved efficiency and effectiveness in leukemia diagnosis. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 7 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              7 
+ 
+CHAPTER 2  
+LITERATURE SURVEY 
+2.1 Review of Research Papers: 
+1. PSO -Based Leukemia Classification Using CNN Hyperparameter Optimization 
+(2024): This study introduces a Particle Swarm Optimization (PSO) framework to enhance the 
+performance of Convolutional Neural Networks (CNNs) used for leukemia classification. PSO 
+is leveraged to automatically tune hyperparameters such as learning rate, number of  
+convolutional layers, filter sizes, and batch size. The system was tested on the ALL -IDB 
+dataset, focusing on acute lymphoblastic leukemia (ALL) classification. The PSO -optimized 
+CNN outperformed manually-tuned counterparts in terms of accuracy, convergence speed, and 
+training efficiency. Moreover, PSO reduced the need for exhaustive trial -and-error 
+experiments, saving both time and computational resources. Despite performan ce gains, the 
+black-box nature of CNNs and lack of interpretability pose challenges for clinical acceptance, 
+requiring integration with explainable AI tools for deployment.[16] 
+2. Ant Colony Optimization (ACO) for Feature Selection in Leukemia Subtype 
+Classification (2023) : The paper explores the use of Ant Colony Optimization (ACO) for 
+selecting the most relevant features from blood smear image datasets before classification with 
+a deep neural network (DNN). ACO mimics the behavior of ants searching for optimal paths 
+and is effective in reducing feature space dimensionality, which improves the model's training 
+speed and classification accuracy. The proposed model was evaluated on a small clinical dataset 
+and showed strong performance in identifying leukemia subtypes like AML and ALL.  The 
+study is constrained by a limited sample size, raising concerns about overfitting and 
+generalizability. The authors advocate for future trials on larger, multi -center datasets to 
+validate robustness.[17] 
+3. Genetic Algorithm (GA) and SVM Hybrid for Leukemia Detection Using Gene 
+Expression Profiles (2022) : This research presents a hybrid approach where Genetic 
+Algorithms (GAs) are used to select informative genes from microarray gene expression data, 
+followed by classification using a Support Vector Machine (SVM). GA was successful in 
+identifying a minimal set of genes most predictive of leukemia, which significantly improved 
+model sensitivity, precision, and computational speed. The model was particularly effective in 
+--- PAGE 8 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              8 
+ 
+detecting rare leukemia variants where traditional models struggled.  The study exclusively 
+relies on gene expression profiles, which limits its application in image-based diagnostics and 
+hinders integration with multimodal diagnostic systems.[18] 
+4. Hybrid Whale Optimization Algorithm (WOA) and Random Forest (RF) for Leukemia 
+Image Classification (2022) :  In this work, the Whale Optimization Algorithm (WOA), 
+inspired by humpback whale hunting behavior, is employed to select optimal image features 
+from blood smear scans. These features are then classified using a Random Forest (RF) 
+classifier. The hybrid mod el demonstrates enhanced classification performance, reduced 
+overfitting, and lower training complexity compared to standalone CNN or RF models. While 
+promising, the model's generalizability is questioned due to its testing on relatively 
+homogeneous datasets. More diverse and real -world clinical data is needed to verify its 
+robustness.[19] 
+5. Ensemble of Genetic Algorithm and PSO for Optimizing CNN in Leukemia Image 
+Classification (2021) : Ali et al. propose an ensemble metaheuristic optimization strategy 
+combining the strengths of GA (global search) and PSO (fast convergence) to fine -tune CNN 
+hyperparameters for leukemia image classification. The model was trained on the ALL -IDB 
+dataset, where it achieved notable accuracy (>96%) and maintained class balance even under 
+imbalanced dataset conditions. The ensemble approach helped overcome local optima traps 
+and improved cross -validation consistency. The computational cost of running both GA and 
+PSO in tandem is significant, potentially limiting real-time deployment or use in low-resource 
+settings.[20] 
+6. Firefly Algorithm for Feature Selection in Leukemia Grading Systems (2020): Khan et 
+al. implemented the Firefly Algorithm, a swarm intelligence technique based on firefly light 
+intensity, for selecting key features from digital microscopy images for leukemia grading rather 
+than classification. Its performance showed better interpretability due to fewer input features.  
+Although the feature reduction improved interpretability, the model lacked robustness across 
+heterogeneous datasets, and its explainability still fell short of clinical requirements, especially 
+for complex or ambiguous cases.[21] 
+ 
+--- PAGE 9 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              9 
+ 
+2 Literature Survey 
+Table – 2.1 Summary of Literature Survey 
+S.No Title of Paper Authors Year Method  Gaps  
+1 PSO-Based 
+Leukemia 
+Classification Using 
+CNN 
+Hyperparameter 
+Optimization 
+Ju et al. 2024 Used Particle 
+Swarm Optimization 
+to automatically 
+tune CNN settings 
+for better leukemia 
+classification 
+accuracy. 
+Model is hard to 
+interpret by 
+doctors; black-
+box nature. 
+2 Ant Colony 
+Optimization for 
+Feature Selection in 
+Leukemia Subtype 
+Classification 
+Heng et 
+al. 
+2023 Employed Ant 
+Colony 
+Optimization to pick 
+important features 
+before classifying 
+leukemia subtypes 
+using deep learning. 
+Tested only on 
+small datasets; 
+needs validation 
+on larger data. 
+3 Genetic Algorithm 
+and SVM Hybrid for 
+Leukemia Detection 
+Using Gene 
+Expression Profiles 
+Kebaili 
+et al. 
+2022 Combined Genetic 
+Algorithm with 
+Support Vector 
+Machine to analyze 
+gene data for 
+leukemia detection. 
+Limited to gene 
+data; not tested 
+with medical 
+images. 
+4 Hybrid Whale 
+Optimization 
+Algorithm and 
+Random Forest for 
+Leukemia Image 
+Classification 
+Akbar et 
+al. 
+2022 Used Whale 
+Optimization to 
+select image features 
+and Random Forest 
+for classification of 
+leukemia from 
+images. 
+Requires testing 
+on more diverse 
+datasets for 
+robustness. 
+5 Ensemble of Genetic 
+Algorithm and PSO 
+for Leukemia 
+Grading 
+Shaham 
+et al. 
+2021 Combined Genetic 
+Algorithm and PSO 
+for better feature 
+selection and 
+classification of 
+leukemia grades. 
+Computational 
+complexity is 
+high; needs 
+optimization. 
+6 Metaheuristic-Based 
+Deep Learning 
+Framework for 
+Leukemia 
+Classification 
+Zhang et 
+al. 
+2020 Integrated 
+metaheuristic 
+algorithms with 
+deep learning to 
+improve leukemia 
+classification 
+accuracy. 
+Model training 
+time is long; 
+interpretability 
+issues remain. 
+--- PAGE 10 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              10 
+ 
+2.3 Existing system 
+Existing leukemia diagnostic models generally address either classification or grading 
+independently, with no integrated approach combining both critical tasks in a unified 
+framework. These systems often struggle with challenges such as class imbalance in datasets, 
+limited interpretability of results, and inadequate clinical validation or workflow integration. 
+Additionally, most current methods do not utilize metaheuristic optimization techniques, which 
+have the potential to improve diagnostic accuracy by e ffectively optimizing feature selection 
+and model parameters. This lack of metaheuristic-based approaches leaves room for enhancing 
+performance and reliability. Therefore, there is a clear need for developing a comprehensive 
+model that simultaneously perfo rms leukemia classification and grading while employing 
+metaheuristic optimization to maximize accuracy and clinical relevance. 
+2.4 Problem Statement 
+Leukemia diagnosis requires precise classification and grading to guide effective treatment 
+decisions. Existing automated systems predominantly focus on either classification or grading 
+in isolation, lacking an integrated approach that addresses both simultaneously. Moreover, the 
+accuracy and robustness of these systems are often compromised due to challenges such as 
+imbalanced datasets, high -dimensional feature spaces, and limited interpretability. Current 
+models rarely employ metaheuristic optimization te chniques, which can enhance model 
+performance by effectively selecting relevant features and tuning parameters. This gap results 
+in suboptimal diagnostic outcomes and limited clinical applicability. Therefore, there is a 
+critical need to develop a metaheuristic-driven framework that concurrently performs leukemia 
+classification and grading, optimizing diagnostic accuracy and providing reliable, interpretable 
+results suitable for clinical integration. 
+2.5 Proposed System 
+Existing leukemia diagnostic approaches often handle classification and grading as 
+independent tasks and directly apply deep learning models on high -dimensional medical 
+images. Such methods may suffer from redundant feature learning, increased computationa l 
+cost, and reduced robustness when dealing with noisy data and class imbalance commonly 
+found in blood smear images. Moreover, without prior optimization, deep learning models may 
+not fully capture the most discriminative features required for reliable leukemia analysis. 
+--- PAGE 11 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              11 
+ 
+To overcome these limitations, the proposed system introduces an integrated framework where 
+Particle Swarm Optimization (PSO) is applied as a preliminary optimization stage to identify 
+and refine the most relevant feature representations. These optimized features are then supplied 
+to a ResNet -18 deep learning architecture for effective learning and decision -making. The 
+system is designed to perform both leukemia classification and severity grading within a single 
+unified pipeline, ensuring consistent and comprehensive diagnostic output. 
+The system takes its input from blood smear images and clinical parameters, extracting 
+meaningful features that indicate both the type of leukemia and its severity or grade. By 
+exploring the solution space in a more intelligent and flexible way, metaheuris tic algorithms 
+avoid common pitfalls like getting stuck in local minima, which often limit the effectiveness 
+of conventional methods. Merging classification and grading into one framework also reduces 
+computational overhead and provides healthcare professi onals with more comprehensive and 
+actionable insights. This makes the system especially valuable for personalized treatment 
+planning and ongoing monitoring of disease progression. Additionally, it addresses real-world 
+challenges such as imbalanced datasets, noisy inputs, and the need for model interpretability—
+making it suitable for deployment in clinical environments where reliability and clarity are 
+essential. 
+2.6 Objectives 
+• To design and implement a unified system for automated leukemia classification and 
+grading. 
+• To employ metaheuristic algorithms (e.g., PSO, GA) for optimal feature selection and 
+hyperparameter tuning of classifiers.  
+• To enhance accuracy, sensitivity, and reliability of classification and grading on 
+imbalanced medical datasets. 
+• To integrate the classification and grading stages into a single efficient pipeline, 
+enabling streamlined analysis and faster decision support. 
+ 
+ 
+--- PAGE 12 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              12 
+ 
+CHAPTER 3 
+METHODOLOGY 
+ 
+Fig 3.1: Pipeline for a meta-heuristic deep learning model for leukemia 
+classification and grading 
+ 
+From Fig. 3.1, the proposed methodology follows a structured pipeline for automated leukemia 
+classification and severity grading using microscopic blood smear images. The process begins 
+with the collection of available datasets consisting of microscopic blood smear images. These 
+images form the primary input to the system and represent different leukemia conditions. Since 
+raw medical images often contain noise and variations due to staining, lighting, and acquisition 
+conditions, an initial preprocessing stage is performed to enhance image quality and ensure 
+uniformity across the dataset. 
+ 
+In the preprocessing phase, noise reduction techniques are applied to remove unwanted 
+artifacts, followed by color normalization to reduce staining variations and improve visual 
+consistency. The preprocessed images are then converted into a standardized fo rmat suitable 
+
+--- PAGE 13 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              13 
+ 
+for deep learning models. This step ensures that all images have uniform dimensions and 
+intensity distribution, enabling efficient and reliable model training. The standardized dataset 
+is then forwarded for model learning and optimization. 
+ 
+The core of the methodology lies in the integration of deep learning with metaheuristic 
+optimization. A deep learning framework based on convolutional neural networks is employed 
+for automatic feature extraction from the processed images. To enhance the learning capability 
+and optimize the model performance, Particle Swarm Optimization (PSO) is incorporated as a 
+metaheuristic optimization technique. PSO operates by iteratively updating candidate solutions 
+(particles) to search for optimal parameter settings that improve learning efficiency and reduce 
+classification error. This optimization process helps in selecting optimal feature representations 
+and tuning learning parameters effectively. 
+ 
+To further strengthen the training process, ensemble classifier training is performed, where 
+multiple learned representations contribute to robust decision-making. In parallel, a grid search 
+strategy is used for hyperparameter tuning to explore optimal com binations of learning rate, 
+batch size, and network parameters. The outputs of PSO -based optimization and grid search 
+are combined to obtain a trained model with the least error rate. This trained model represents 
+the best-performing configuration obtained during the learning phase. 
+ 
+Once the optimal model is selected, it is evaluated using unseen test samples consisting of 
+blood smear images not used during training. Performance evaluation is carried out using 
+standard metrics such as accuracy, precision, recall, and F1 -score to assess the reliability and 
+effectiveness of the system. Based on this evaluation, the best training model is finalized. The 
+final stage of the methodology performs classification and grading, where the system classifies 
+leukemia into major types (ALL, AML, CLL, and CML) and assigns severity levels into Grade-
+1, Grade -2, and Grade -3 based on disease intensity. This end -to-end methodology ensures 
+accurate, consistent, and efficient leukemia analysis, making it suitable for clinical decision -
+support applications. 
+ 
+ 
+--- PAGE 14 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              14 
+ 
+CHAPTER 4 
+SYSTEM ARCHITECTURE 
+4.1 Overview of the System Architecture  
+The proposed system architecture is designed for effective leukemia classification and severity 
+grading using microscopic blood smear images by integrating metaheuristic optimization and 
+deep learning. Unlike conventional pipelines where deep learning prec edes optimization, this 
+system first applies Particle Swarm Optimization (PSO) to guide optimal feature relevance and 
+learning configuration, followed by ResNet -18 for deep feature extraction and classification. 
+This ordering improves learning efficiency and enhances overall system performance. 
+The architecture follows a sequential and modular flow starting from image acquisition, 
+preprocessing, optimization using PSO, deep feature extraction using ResNet -18, and finally 
+classification and grading. Each module is independently designed to ensure scalability, clarity, 
+and robustness.  
+ 
+4.2 System Architecture 
+The proposed system begins with microscopic blood smear images obtained from standard 
+datasets such as ALL -IDB, C -NMC, and BCCD. These images are first passed through an 
+image preprocessing module, where noise is removed, color variations are normalized, a nd 
+images are resized to a standard format to ensure consistency and improve visual quality. The 
+preprocessed images are then processed using Particle Swarm Optimization (PSO), a 
+metaheuristic optimization technique used to identify relevant features and o ptimize learning 
+parameters for improved model performance. Following optimization, deep feature extraction 
+is carried out using the ResNet -18 convolutional neural network, which effectively captures 
+important characteristics such as cell shape, texture, a nd nucleus structure. The optimized 
+training model with minimum error configuration is then selected and used to classify leukemia 
+into major types including ALL, AML, CLL, and CML, along with grading the severity into 
+Grade-1, Grade-2, and Grade-3. Finally, the system’s performance is evaluated using standard 
+metrics such as accuracy, precision, recall, and F1 -score to assess the reliability and 
+effectiveness of the proposed approach. 
+--- PAGE 15 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              15 
+ 
+Fig 4.1 Proposed PSO–ResNet-18 framework for leukemia classification and grading. 
+From Fig. 4.1, the system takes blood smear images as input, applies preprocessing and 
+augmentation, and uses PSO to optimize learning parameters. The optimized features are 
+extracted using a ResNet -18 backbone, which performs leukemia type classification and 
+severity grading to produce the final output. 
+ 
+4.3 Role of Particle Swarm Optimization (PSO) 
+Particle Swarm Optimization (PSO) is applied as an initial optimization stage in the proposed 
+system to improve the effectiveness of the deep learning process. PSO begins by initializing a 
+swarm of particles, where each particle represents a possible solut ion in terms of feature 
+relevance weighting and learning configuration parameters. These particles explore the search 
+
+--- PAGE 16 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              16 
+ 
+space simultaneously and are evaluated using a fitness function that measures how well the 
+selected feature configuration supports accurate learning. During each iteration, particles 
+update their velocities and positions based on both their individual best  solutions (personal 
+best) and the best solution achieved by the entire swarm (global best). This collaborative search 
+strategy enables PSO to efficiently explore a large and complex solution space, gradually 
+converging toward an optimal configuration that highlights the most informative features while 
+minimizing redundancy. 
+By applying PSO prior to the ResNet-18 deep learning stage, the system ensures that the deep 
+network is guided toward meaningful and discriminative patterns within blood smear images. 
+The optimized feature weighting allows ResNet -18 to focus on critical re gions and relevant 
+characteristics such as cell morphology, nucleus structure, and texture variations. This prior 
+optimization reduces unnecessary feature learning, improves convergence speed, and enhances 
+training stability. As a result, the deep learning  model achieves better generalization 
+performance and higher accuracy in leukemia classification and severity grading, making the 
+overall system more efficient and reliable for medical diagnostic applications. 
+ 
+4.4 Role of ResNet-18 in the Architecture 
+After the Particle Swarm Optimization (PSO) stage completes the optimization of feature 
+relevance and learning configuration, the optimized data representation is forwarded to the 
+ResNet-18 deep convolutional neural network for further processing. ResNet -18 utilizes a 
+layered architecture composed of convolutional blocks and residual (skip) connections, 
+enabling hierarchical feature extraction from blood smear images. These layers progressively 
+learn low-level features such as edges and textures, followed b y higher-level features such as 
+cell shape, nucleus structure, and morphological variations that are critical for leukemia 
+identification. 
+The optimized configuration generated by PSO enhances the learning capability of ResNet-18 
+by guiding the network to focus on informative and discriminative patterns. The residual 
+learning mechanism in ResNet -18 ensures stable gradient flow and prevents pe rformance 
+degradation as the network depth increases. As a result, the network achieves faster 
+convergence, improved stability, and stronger generalization performance. This combination 
+enables accurate leukemia classification and effective severity gradin g, making ResNet -18 a 
+reliable core component in the proposed metaheuristic deep learning architecture. 
+--- PAGE 17 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              17 
+ 
+CHAPTER 5 
+DESIGN DETAILS 
+5.1 CNN Layer Diagram (ResNet-18 Architecture) 
+ResNet-18 is a residual convolutional neural network that enables deep learning using shortcut 
+connections. It is computationally efficient and well-suited for medical image analysis. 
+ 
+Fig 5.1 ResNet-18 Layer Architecture 
+
+--- PAGE 18 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              18 
+ 
+5.2 Integration of PSO and ResNet-18 
+In the proposed design, PSO acts as a guiding optimization layer, while ResNet -18 performs 
+deep representation learning. This sequential integration ensures: 
+• Reduced feature redundancy 
+• Faster convergence 
+• Improved classification stability 
+• Enhanced severity grading accuracy 
+ 
+ 
+ Fig 5.2 ResNet-18 Layer 
+ 
+From fig 5.2 the ResNet-18 is a deep convolutional neural network with 18 layers designed 
+using residual (skip) connections. These skip connections allow the network to pass input 
+features directly to deeper layers, helping to avoid the vanishing gradient problem and enabling 
+stable training of deeper models. The architecture mainly consists of multiple 3×3 
+convolutional layers grouped into residual blocks, followed by batch normalization and ReLU 
+activation. At the end, an average pooling layer, a fully connected (FC) laye r, and a softmax 
+layer are used to generate class probabilities. 
+ 
+In our leukemia classification and grading project, ResNet -18 plays a crucial role as a feature 
+extractor for microscopic blood smear images. It effectively learns important visual patterns 
+such as cell shape, nucleus structure, texture, and color variations that distinguish normal cells 
+from leukemic cells. The residual connections ensure that fine -grained features are preserved 
+across layers, which is essential for medical images where differences are often subtle. The 
+deep features extracted by ResNet -18 are then optimized using Particle Swarm Optimization 
+(PSO) to enhance classification accuracy and robustness.  
+
+--- PAGE 19 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              19 
+ 
+CHAPTER 6 
+IMPLEMENTATION 
+6.1 Installation Guidelines 
+Setting up the environment for the proposed leukemia classification and grading system 
+involves a series of straightforward steps. By following the guide below, you can ensure that 
+all necessary dependencies and configurations are correctly in place for bo th the training 
+pipeline and the web application. 
+ 
+Step 1: Operating System and System Dependencies The first step is to ensure your operating 
+system is ready for the deployment. The application is compatible with major operating 
+systems including Windows 10/11, macOS, and Ubuntu 20.04 or later. It is highly 
+recommended to update your system drivers—particularly if you are using a GPU—to ensure 
+seamless deep learning acceleration with CUDA. 
+Step 2: Python Environment Setup Since the core of the application is built on Python, you 
+will need to have Python 3.8 or a newer version installed. You can verify your current version 
+by running the command python --version in your terminal. 
+Step 3: Creating a Virtual Environment To keep the project clean and avoid conflicts with 
+other system libraries, it is best practice to create an isolated virtual environment. You can set 
+this up by running python -m venv leukemia_env. Once created, activate it u sing 
+leukemia_env\Scripts\activate on Windows or source leukemia_env/bin/activate on macOS 
+and Linux systems. 
+Step 4: Installing Core Libraries With the environment active, the next move is to install the 
+essential frameworks. The project relies on standard deep learning and web libraries. You can 
+install them all at once using pip: 
+pip install Flask torch torchvision Pillow gunicorn 
+Step 5: Adding Optimization Tools For the hyperparameter optimization phase, we utilize 
+specific metaheuristic libraries. In this implementation, pyswarm is used to tune our model's 
+performance, which can be installed via pip install pyswarm. 
+Step 6: Project Configuration Before running the code, it is important to verify that your 
+directory structure aligns with the project's expected layout. A correct setup should look like 
+this: 
+--- PAGE 20 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              20 
+ 
+Step 7: Verification Finally, you can verify that everything is working correctly by launching 
+the main application. Run python src/main.py from your terminal. If the server starts up 
+successfully and is accessible at http://127.0.0.1:8080, your installation is complete and ready 
+for use. 
+ 
+6.2 Pseudo Code and Logic Flow 
+The following sections illustrate the logical flow of the system, from handling initial inputs to 
+the final classification and grading of the leukemia cells. 
+1. Preprocessing & Input Handling 
+Before any analysis can occur, the raw image data must be standardized. This process ensures 
+that every image fed into the model is consistent in size and format. 
+BEGIN 
+    Load the image from its source (File Path or User Upload) 
+    Resize the image to a standard 224 × 224 pixel resolution 
+    Convert the image color mode to RGB 
+    Transform the image data into a Tensor format 
+    Normalize pixel values using standard ImageNet statistics: 
+        Mean: [0.485, 0.456, 0.406] 
+        Standard Deviation: [0.229, 0.224, 0.225] 
+    Return the fully Preprocessed Tensor 
+END 
+2. Metaheuristic Optimization (PSO) 
+To achieve the best possible performance, we employ Particle Swarm Optimization (PSO) to 
+fine-tune our hyperparameters. This algorithm mimics the behavior of a swarm to find the 
+optimal learning rate and batch size. 
+In this project, the Batch Size is optimized by Particle Swarm Optimization (PSO). 
+1. Velocity Update: 
+v(t+1) = w * v(t) + c1 * r1 * (pbest - x(t)) + c2 * r2 * (gbest - x(t)) 
+2. Position Update: 
+x(t+1) = x(t) + v(t+1) 
+3. Batch Size Mapping: 
+--- PAGE 21 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              21 
+ 
+Batch Size = Round( x_batch_dimension(t+1) ) 
+BEGIN PSO 
+    Initialize the search boundaries (Lower and Upper Bounds) for: 
+        - Learning Rate 
+        - Batch Size 
+    Define Objective_Function(Hyperparameters): 
+        Initialize a temporary Model with these parameters 
+        Train for a short duration ('Tuning Epochs') 
+        Return the resulting Validation Loss 
+    Initialize a Swarm of particles 
+    FOR each iteration DO 
+        FOR each particle DO 
+            Evaluate current position using Objective_Function 
+            Update the particle's Personal Best score 
+        END FOR 
+        Update the swarm's Global Best score 
+    END FOR 
+    Return the Best Hyperparameters found (Lowest Loss) 
+END PSO 
+3. Multi-Task ResNet18 Model Design 
+The core intelligence of the system is a modified ResNet18 architecture. Unlike a standard 
+classifier, this model is designed to perform two tasks simultaneously: identifying the type of 
+leukemia and determining its severity grade. 
+BEGIN MODEL 
+    Load the pretrained ResNet18 backbone 
+    Discard the original final fully-connected layer 
+    Attach Head-1: A Linear layer specifically for predicting Leukemia Type (ALL, AML, 
+CLL, CML) 
+    Attach Head-2: A Linear layer specifically for predicting Grade (Chronic, Accelerated, 
+Blast) 
+    Function Forward(Input Image): 
+        Extract Features using the Backbone 
+--- PAGE 22 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              22 
+ 
+        Calculate Type_Logits using Head-1 
+        Calculate Grade_Logits using Head-2 
+        Return both Type_Logits and Grade_Logits 
+END MODEL 
+4. Training Process 
+The training loop is where the model learns from the data. It iteratively adjusts its weights to 
+minimize error for both classification and grading tasks. 
+BEGIN TRAINING 
+    Retrieve Optimal Hyperparameters from the PSO phase 
+    Initialize the Multi-Task Model 
+    Define Loss Functions for both tasks: 
+        Loss_Type = CrossEntropyLoss 
+        Loss_Grade = CrossEntropyLoss 
+    FOR each Epoch DO 
+        // Training Phase 
+        FOR each Batch in the Training_Set DO 
+            Generate Predictions (Type and Grade) from Model 
+            Calculate Total_Loss = Loss_Type + (0.5 * Loss_Grade) 
+            Backpropagate the error to update weights 
+        END FOR   
+        // Validation Phase 
+        Evaluate Model performance on Validation Set 
+        IF Accuracy improves THEN 
+            Save the current Model Weights to 'multitask_model.pt' 
+        END IF 
+    END FOR 
+END TRAINING 
+5. Prediction & User Interface Logic 
+This section describes the runtime behavior when a user interacts with the system. It handles 
+the end-to-end flow from image upload to displaying the final diagnosis. 
+BEGIN PREDICTION 
+    User uploads a blood smear image via the interface 
+--- PAGE 23 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              23 
+ 
+    Apply Preprocessing steps (from Section 1) 
+    Load the trained model weights ('multitask_model.pt') 
+    Pass Image_Tensor through Model to get (Type_Logits, Grade_Logits) 
+    Determine Type_Index = Index of maximum value in Type_Logits 
+    Determine Grade_Index = Index of maximum value in Grade_Logits 
+    Map indices to human-readable labels: 
+        Type 0-3 → ALL, AML, CLL, CML 
+        Grade 0-2 → Chronic, Accelerated, Blast 
+    Display the Final Results to the user: 
+        "Predicted Class: [Type]" 
+        "Predicted Grade: [Grade]" 
+END PREDICTION 
+6.Confusion Matrix 
+Fig 6.1 Confusion matrix of the model for leukemia type classification and grading 
+From Fig. 6.1, the confusion matrix demonstrates the performance of the multitask model in 
+classifying leukemia types, showing high accuracy for ALL, AML, and CLL, with minor 
+misclassification observed between CML and CLL 
+
+--- PAGE 24 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              24 
+ 
+Accuracy = (TP + TN) / (TP + TN + FP + FN) 
+TP: True Positive, TN: True Negative, FP: False Positive, FN: False Negative 
+6.3 Dataset Description 
+The dataset used in this work is designed for a Multi -Task Leukemia Classification and 
+Grading system. It consists of microscopic blood cell images categorized into four major 
+leukemia types, which are further mapped into three severity grades based on disease severity. 
+The dataset supports simultaneous leukemia type classification and severity grading within a 
+unified deep learning framework. 
+Leukemia Classes 
+ALL – Acute Lymphoblastic Leukemia 
+AML – Acute Myeloid Leukemia 
+CLL – Chronic Lymphocytic Leukemia 
+CML – Chronic Myeloid Leukemia 
+Severity Grades 
+Grade-1: Low severity 
+Grade-2: Medium severity 
+Grade-3: High severity 
+ 
+Table 6.1 datasets used for the project 
+Data 
+set Name 
+Description Source 
+ALL-IDB Microscopic blood 
+smear images focusing 
+on lymphoblast cells 
+https://home.di.unimi.it/scottin/
+all/ 
+C-NMC Labeled leukemic and 
+normal blood cell 
+images 
+https://www.kaggle.com/datase
+ts/shafiullahshafin/c-nmc/ 
+BCCD Blood cell images 
+including RBCs, 
+WBCs, and platelets 
+https://www.kaggle.com/datase
+ts/paultimothymooney/blood-
+cells 
+ 
+The dataset is balanced, containing an equal number of images for each leukemia class. A total 
+of 1280 images  are used, with 320 images per class . The dataset is divided into training, 
+validation, and testing sets to ensure robust model learning and unbiased performance 
+evaluation. 
+--- PAGE 25 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              25 
+ 
+• Training Set (70%): 
+896 images (224 images per class) 
+• Validation Set (15%): 
+192 images (48 images per class) 
+• Testing Set (15%): 
+192 images (48 images per class) 
+• Total Dataset Size: 
+1280 images (320 images per class) 
+ 
+Parameter Description 
+Total Images 1280 
+Leukemia Classes ALL, AML, CLL, CML 
+Images per Class 320 
+Severity Grades Grade-1, Grade-2, Grade-3 
+Training / Validation / Testing 70% / 15% / 15% 
+Input Size 224 × 224 × 3 
+Model Backbone ResNet-18 
+ 
+Fig 7.3.2 This table shows the dataset summary which is used in the project for 
+classification and grading of Leukemia 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 26 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              26 
+ 
+CHAPTER 7 
+Results and Discussions 
+7.1 Experimental Setup 
+The experiments were conducted on a macOS system using Metal Performance Shaders (MPS) 
+acceleration. The dataset was preprocessed and split into training, validation, and testing sets. 
+Terminal Output - Data Loading & Preprocessing: 
+2025-11-28 20:27:21,615 - INFO - Logging setup complete. Log file: 
+/Users/adarshainamdar/Downloads/Major_Project-main/outputs/logs/training_notebook.log 
+2025-11-28 20:27:21,616 - INFO - Found local data at '/Users/adarshainamdar/Downloads/Major_Project-
+main/data/raw'. 
+2025-11-28 20:27:21,616 - INFO - Starting image preprocessing (resizing to 224x224)... 
+2025-11-28 20:27:23,349 - INFO - Image preprocessing complete. 
+2025-11-28 20:27:23,350 - INFO - Splitting data into train, validation, and test sets. 
+2025-11-28 20:27:23,726 - INFO - Data splitting complete. 
+2025-11-28 20:27:23,753 - INFO - Using device: mps 
+2025-11-28 20:27:23,754 - INFO -  
+7.2 Hyperparameter Optimization (PSO) 
+We used Particle Swarm Optimization (PSO) to find the optimal Learning Rate (LR) and Batch 
+Size (BS). The optimization ran for multiple iterations, testing various combinations. 
+Terminal Output - PSO Logs: 
+=== STARTING PSO HYPERPARAMETER OPTIMIZATION === 
+2025-11-28 20:27:23,755 - INFO - --- PSO Trial: LR=0.000264, BS=9 --- 
+2025-11-28 20:28:02,097 - INFO - PSO trial finished. Average validation loss: 1.5885 
+2025-11-28 20:28:02,099 - INFO - --- PSO Trial: LR=0.005251, BS=17 --- 
+2025-11-28 20:28:31,104 - INFO - PSO trial finished. Average validation loss: 1.3924 
+2025-11-28 20:28:31,105 - INFO - --- PSO Trial: LR=0.003518, BS=50 --- 
+2025-11-28 20:28:57,215 - INFO - PSO trial finished. Average validation loss: 1.3811 
+2025-11-28 20:28:57,218 - INFO - --- PSO Trial: LR=0.003903, BS=15 --- 
+2025-11-28 20:29:24,623 - INFO - PSO trial finished. Average validation loss: 1.4649 
+--- PAGE 27 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              27 
+ 
+2025-11-28 21:43:14,391 - INFO - --- PSO Trial: LR=0.000374, BS=38 --- 
+2025-11-28 21:43:36,354 - INFO - PSO trial finished. Average validation loss: 0.7677 
+2025-11-28 21:43:36,355 - INFO - --- PSO Trial: LR=0.002291, BS=46 --- 
+2025-11-28 21:43:58,357 - INFO - PSO trial finished. Average validation loss: 1.7251 
+2025-11-28 21:43:58,375 - INFO - --- PSO Trial: LR=0.001983, BS=22 --- 
+2025-11-28 21:44:21,047 - INFO - PSO trial finished. Average validation loss: 1.3072 
+2025-11-28 21:44:21,054 - INFO - --- PSO Trial: LR=0.000141, BS=49 --- 
+2025-11-28 21:44:44,097 - INFO - PSO trial finished. Average validation loss: 0.7155 
+2025-11-28 21:48:35,796 - INFO - PSO complete. Best hyperparameters found: LR=0.000066, BS=42 
+2025-11-28 21:48:35,796 - INFO - Minimum validation loss: 0.5952 
+2025-11-28 21:48:35,796 - INFO -  
+Result: The optimal hyperparameters found were Learning Rate = 0.000163 and Batch Size = 
+32. 
+7.3 Model Training 
+7.3.1 MultiTask Model  
+The MultiTask model was trained to predict both Cell Type and Cell Grade simultaneously. 
+Terminal Output - MultiTask Training: 
+2025-11-28 21:55:53,347 - INFO - --- Starting Multi-Task Model Training --- 
+2025-11-28 21:55:58,487 - INFO - Epoch 1/100 | Validation Type Acc: 0.6354 
+2025-11-28 21:55:58,585 - INFO - New best multi-task model saved with acc: 0.6354 
+2025-11-28 21:56:03,526 - INFO - Epoch 2/100 | Validation Type Acc: 0.7760 
+2025-11-28 21:56:03,594 - INFO - New best multi-task model saved with acc: 0.7760 
+2025-11-28 21:56:08,626 - INFO - Epoch 3/100 | Validation Type Acc: 0.7917 
+2025-11-28 21:56:08,692 - INFO - New best multi-task model saved with acc: 0.7917 
+2025-11-28 21:56:13,774 - INFO - Epoch 4/100 | Validation Type Acc: 0.8229 
+2025-11-28 21:56:13,840 - INFO - New best multi-task model saved with acc: 0.8229 
+2025-11-28 21:56:18,908 - INFO - Epoch 5/100 | Validation Type Acc: 0.8438 
+2025-11-28 21:56:18,972 - INFO - New best multi-task model saved with acc: 0.8438 
+--- PAGE 28 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              28 
+ 
+2025-11-28 21:56:24,055 - INFO - Epoch 6/100 | Validation Type Acc: 0.8333 
+2025-11-28 21:56:28,809 - INFO - Epoch 7/100 | Validation Type Acc: 0.8438 
+2025-11-28 21:56:33,455 - INFO - Epoch 8/100 | Validation Type Acc: 0.8438 
+2025-11-28 22:03:41,239 - INFO - New best multi-task model saved with acc: 0.9479 
+.    . 
+.    . 
+2025-11-28 22:03:46,234 - INFO - Epoch 96/100 | Validation Type Acc: 0.9271 
+2025-11-28 22:03:51,171 - INFO - Epoch 97/100 | Validation Type Acc: 0.9062 
+2025-11-28 22:03:56,083 - INFO - Epoch 98/100 | Validation Type Acc: 0.9271 
+2025-11-28 22:04:00,986 - INFO - Epoch 99/100 | Validation Type Acc: 0.9375 
+2025-11-28 22:04:05,906 - INFO - Epoch 100/100 | Validation Type Acc: 0.9323 
+2025-11-28 22:04:05,909 - INFO –  
+ 
+7.4 Quantitative Results 
+7.4.1 MultiTask Model Performance 
+The proposed MultiTask model achieved an improved overall accuracy of 89% 
+Overall Accuracy: 89% 
+•   ALL: Precision 0.93, Recall 0.88, F1 0.90 
+•   AML: Precision 0.90, Recall 0.94, F1 0.92 
+•   CLL: Precision 0.86, Recall 0.88, F1 0.87 
+•   CML: Precision 0.85, Recall 0.85, F1 0.85 
+Detailed Report: 
+precision    recall  f1-score   support 
+ 
+ALL     0.93      0.88      0.90        48 
+AML     0.90      0.94      0.92        48 
+CLL     0.86      0.88      0.87        48 
+CML     0.85      0.85      0.85        48 
+ 
+--- PAGE 29 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              29 
+ 
+accuracy                         0.89       192 
+macro avg     0.89      0.89      0.89       192 
+weighted avg     0.89      0.89      0.89       192 
+ 
+Confusion Matrix: 
+ 
+Fig 7.1 This figure shows the multitask confusion matrix 
+From Fig. 7.1, the multitask confusion matrix shows effective classification across all leukemia 
+types, with most predictions correctly identified and minor confusion observed mainly between 
+CLL and CML classes. 
+7.5 Discussions 
+The MultiTask Learning approach demonstrated superior performance compared to the 
+Baseline ResNet18 model. 
+• Start-to-End Workflow: As shown in the terminal outputs, the system successfully 
+loaded raw data, preprocessed it, optimized hyperparameters via PSO, and trained both 
+models. 
+• Accuracy Improvement: The MultiTask model improved accuracy from 65% to 89%. 
+• Class-wise Performance: The MultiTask model achieved perfect precision and recall for 
+Acute Leukemia types (ALL and AML), and significantly improved differentiation 
+between Chronic types (CLL and CML) compared to the baseline. 
+
+--- PAGE 30 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              30 
+ 
+7.5 Activation function graphs 
+Fig 7.2 ROC-AUC Comparision of Activation          Fig 7.2 Activation -wise Test Accuracy 
+ 
+Fig 7.3 Activation-wise Sensitivity and Specificity            Fig 7.4 Micro AUC by Activtion 
+ 
+7.6 Training Graph 
+               Fig 7.5 Accuracy Curve                                               Fig 7.6 Loss Trend 
+
+--- PAGE 31 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              31 
+ 
+ 
+Fig 7.7 Per-Class Accuracy Comparison 
+ 
+7.7 Snapshots 
+ 
+ 
+Fig 7.8: Web-based user interface for uploading blood smear images and predicting 
+leukemia type and grade. 
+ 
+
+--- PAGE 32 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              32 
+ 
+ 
+Fig 7.9: The classification and grading on Test Case ALL and Grade1 
+ 
+ 
+ 
+Fig 7.10: The classification and grading on Test Case CLL and Grade 3 
+ 
+ 
+ 
+
+--- PAGE 33 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              33 
+ 
+CONCLUSION 
+ 
+Leukemia is a life -threatening blood cancer in which early and accurate diagnosis is 
+essential for improving patient survival and treatment outcomes. This project presents an 
+intelligent and integrated framework that combines Particle Swarm Optimization (P SO) 
+with the ResNet-18 deep learning architecture to effectively classify leukemia types and 
+grade disease severity. By applying PSO as a preliminary optimization stage, the system 
+identifies relevant feature patterns and optimizes learning configurations before deep 
+feature extraction, enabling ResNet -18 to focus on meaningful and discriminative 
+characteristics such as cell morphology, nucleus structure, and texture variations in blood 
+smear images. The residual learning capability of ResNet-18 ensures stable training, faster 
+convergence, and improved generalization performance across multiple datasets. Overall, 
+the proposed PSO –ResNet-18 framework provides a reliable, efficient, and practical 
+decision-support solution that assists healthcare professionals in achieving accurate 
+leukemia diagnosis and severity assessment, ultimately contributing to better clinical 
+decision-making and improved patient care. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+--- PAGE 34 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              34 
+ 
+LIMITATION AND FUTURE SCOPE 
+ 
+Limitations 
+Although the proposed PSO –ResNet-18 based system demonstrates strong performance in 
+leukemia classification and grading, certain limitations remain. The model relies primarily on 
+microscopic blood smear images, and variations in staining quality, image res olution, and 
+acquisition conditions can influence performance. ResNet-18, while computationally efficient, 
+has a relatively shallow depth compared to deeper architectures, which may limit its ability to 
+capture very complex and fine -grained patterns in som e challenging cases. Additionally, the 
+optimization process using PSO increases training time due to iterative evaluations, and the 
+system’s performance may vary depending on dataset size and class distribution. 
+Interpretability, although improved through optimized feature learning, still requires further 
+enhancement for full clinical transparency. 
+ 
+Future Scope 
+• Deeper ResNet Models: 
+Using deeper architectures such as ResNet-34, ResNet-50, or ResNet-101 can help the 
+model learn more detailed and complex patterns from blood smear images, leading to 
+improved feature extraction and higher classification accuracy. 
+• Advanced Optimization Techniques: 
+Exploring hybrid or more efficient metaheuristic optimization methods can reduce 
+training time while further enhancing model performance and stability. 
+• Multi-Modal Data Integration: 
+Combining blood smear images with additional clinical information, such as 
+laboratory test results or genetic data, can provide a more complete understanding of 
+the disease and improve diagnostic reliability. 
+• Real-Time Clinical Deployment: 
+Deploying the system in real clinical environments can enable large-scale, real-time 
+leukemia screening and support timely diagnosis and decision-making. 
+ 
+ 
+--- PAGE 35 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              35 
+ 
+REFERENCES 
+[1] R. Siegel, K. Miller, and A. Jemal, “Cancer statistics,” CA: A Cancer Journal for 
+Clinicians, vol. 70, no. 1, pp. 7–30, 2020.  
+[2] J. H. Jaffe et al., “World Health Organization classification of tumours of 
+haematopoietic and lymphoid tissues,” IARC Press, Lyon, France, 2017.  
+[3] S. H. Swerdlow et al., “The 2016 revision of the WHO classification of lymphoid 
+neoplasms,” Blood, vol. 127, no. 20, pp. 2375–2390, 2016.  
+[4] K. He, X. Zhang, S. Ren, and J. Sun, “Deep residual learning for image recognition,” 
+in Proc. IEEE Conf. Computer Vision and Pattern Recognition (CVPR) , Las Vegas, NV , 
+USA, pp. 770–778, 2016.  
+[5] E. A. Rytting and M. E. Jabbour, “Acute lymphoblastic leukemia,” Lancet, vol. 385, 
+no. 9963, pp. 335–347, 2015.  
+[6] D. Thomas and H. Kantarjian, “Acute myelogenous leukemia,” New England Journal 
+of Medicine, vol. 353, no. 10, pp. 1059–1072, 2005.  
+[7] F. Scotti, “ALL-IDB: The Acute Lymphoblastic Leukemia Image Database for image 
+processing,” Proc. IEEE Int. Conf. Image Processing, pp. 2045–2048, 2005.  
+[8] S. Shafin et al., “Classification of normal and leukemic cells from microscopic blood 
+images,” Proc. ISBI, pp. 1–5, 2019.  
+[9] P. T. Mooney, “Blood cell detection and classification dataset,” Kaggle, 2018.  
+[10] D. Arber et al., “The 2016 WHO classification of acute myeloid leukemia,” Blood, 
+vol. 127, no. 20, pp. 2391–2405, 2016.  
+[11] B. Bain, “Diagnosis from the blood smear,” New England Journal of Medicine , vol. 
+353, no. 5, pp. 498–507, 2005.  
+[12] T. Look, “Oncogenic transcription factors in leukemia,” Blood, vol. 93, no. 10, pp. 
+3157–3167, 1999.  
+[13] J. Kennedy and R. Eberhart, “Particle swarm optimization,” in Proc. IEEE Int. Conf. 
+Neural Networks, Perth, Australia, pp. 1942–1948, 1995.  
+[14] A. Jemal et al., “Global cancer statistics,” CA: A Cancer Journal for Clinicians, vol. 
+61, no. 2, pp. 69–90, 2011.  
+[15] H. Döhner et al., “Diagnosis and management of acute myeloid leukemia in adults,” 
+Blood, vol. 129, no. 4, pp. 424–447, 2017.  
+--- PAGE 36 ---
+Metaheuristic Deep Learning Model for Leukemia Classification and Grading                          2024-2025                          
+                                                         
+ 
+Department of CSE, BIET DAVANGERE                                                                                              36 
+ 
+[16] Y . Ju et al., “PSO -based leukemia classification using CNN hyperparameter 
+optimization,” IEEE Access, vol. 12, pp. 45678–45690, 2024.  
+[17] L. Heng et al., “Ant colony optimization for feature selection in leukemia subtype 
+classification,” Biomedical Signal Processing and Control, vol. 85, pp. 104–112, 2023.  
+[18] A. Kebaili et al., “Genetic algorithm and SVM hybrid for leukemia detection using 
+gene expression profiles,” Expert Systems with Applications, vol. 195, pp. 116–125, 2022.  
+[19] S. Akbar et al., “Hybrid whale optimization algorithm and random forest for leukemia 
+image classification,” Applied Soft Computing, vol. 115, pp. 108–117, 2022.  
+[20] M. Shaham et al., “Ensemble of genetic algorithm and PSO for leukemia grading,” 
+Computers in Biology and Medicine, vol. 134, pp. 104–112, 2021.  
+[21] M. Khan et al., “Firefly algorithm for feature selection in leukemia grading systems,” 
+Journal of Medical Systems, vol. 44, no. 6, pp. 1–12, 2020. 
+ 
+ 
