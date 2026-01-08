@@ -1,0 +1,54 @@
+2025-09-04 13:19:48,661 - INFO - Logging setup complete. Log file: /Users/adarshainamdar/Documents/Major_Project/outputs/logs/training_main.log
+2025-09-04 13:19:48,661 - INFO - Found local data at '/Users/adarshainamdar/Documents/Major_Project/data/raw'.
+2025-09-04 13:19:48,661 - INFO - Starting image preprocessing (resizing to 224x224)...
+2025-09-04 13:19:50,194 - INFO - Image preprocessing complete.
+2025-09-04 13:19:50,194 - INFO - Splitting data into train, validation, and test sets.
+2025-09-04 13:19:50,518 - INFO - Data splitting complete.
+2025-09-04 13:19:50,535 - INFO - Using device: mps
+2025-09-04 13:19:50,535 - INFO - === BASELINE MODEL PIPELINE ===
+2025-09-04 13:19:50,718 - INFO - --- Starting Baseline Model Training ---
+2025-09-04 13:19:55,721 - INFO - Epoch 1/10 | Validation Acc: 0.4948
+2025-09-04 13:19:55,806 - INFO - New best baseline model saved with acc: 0.4948
+2025-09-04 13:20:00,209 - INFO - Epoch 2/10 | Validation Acc: 0.6719
+2025-09-04 13:20:00,276 - INFO - New best baseline model saved with acc: 0.6719
+2025-09-04 13:20:04,642 - INFO - Epoch 3/10 | Validation Acc: 0.6562
+2025-09-04 13:20:09,080 - INFO - Epoch 4/10 | Validation Acc: 0.5781
+2025-09-04 13:20:13,527 - INFO - Epoch 5/10 | Validation Acc: 0.6146
+2025-09-04 13:20:17,952 - INFO - Epoch 6/10 | Validation Acc: 0.7031
+2025-09-04 13:20:18,022 - INFO - New best baseline model saved with acc: 0.7031
+2025-09-04 13:20:22,438 - INFO - Epoch 7/10 | Validation Acc: 0.5990
+2025-09-04 13:20:26,883 - INFO - Epoch 8/10 | Validation Acc: 0.6458
+2025-09-04 13:20:31,350 - INFO - Epoch 9/10 | Validation Acc: 0.7552
+2025-09-04 13:20:31,424 - INFO - New best baseline model saved with acc: 0.7552
+2025-09-04 13:20:35,852 - INFO - Epoch 10/10 | Validation Acc: 0.6979
+2025-09-04 13:20:35,892 - INFO - --- Evaluating Model on Test Set ---
+2025-09-04 13:20:36,277 - INFO - Classification Report:
+              precision    recall  f1-score   support
+
+         ALL       0.94      0.98      0.96        48
+         AML       0.70      0.73      0.71        48
+         CLL       0.71      0.71      0.71        48
+         CML       0.68      0.62      0.65        48
+
+    accuracy                           0.76       192
+   macro avg       0.76      0.76      0.76       192
+weighted avg       0.76      0.76      0.76       192
+
+2025-09-04 13:20:36,278 - INFO - 
+=== MULTI-TASK MODEL PIPELINE ===
+2025-09-04 13:20:36,459 - INFO - --- Starting Multi-Task Model Training ---
+2025-09-04 13:20:41,116 - INFO - Epoch 1/10 | Validation Type Acc: 0.6042
+2025-09-04 13:20:41,185 - INFO - New best multi-task model saved with acc: 0.6042
+2025-09-04 13:20:45,605 - INFO - Epoch 2/10 | Validation Type Acc: 0.5208
+2025-09-04 13:20:49,988 - INFO - Epoch 3/10 | Validation Type Acc: 0.5677
+2025-09-04 13:20:54,370 - INFO - Epoch 4/10 | Validation Type Acc: 0.6198
+2025-09-04 13:20:54,477 - INFO - New best multi-task model saved with acc: 0.6198
+2025-09-04 13:20:58,872 - INFO - Epoch 5/10 | Validation Type Acc: 0.6042
+2025-09-04 13:21:03,277 - INFO - Epoch 6/10 | Validation Type Acc: 0.6615
+2025-09-04 13:21:03,346 - INFO - New best multi-task model saved with acc: 0.6615
+2025-09-04 13:21:07,766 - INFO - Epoch 7/10 | Validation Type Acc: 0.5885
+2025-09-04 13:21:12,167 - INFO - Epoch 8/10 | Validation Type Acc: 0.7240
+2025-09-04 13:21:12,236 - INFO - New best multi-task model saved with acc: 0.7240
+2025-09-04 13:21:16,673 - INFO - Epoch 9/10 | Validation Type Acc: 0.5625
+2025-09-04 13:21:21,188 - INFO - Epoch 10/10 | Validation Type Acc: 0.5781
+2025-09-04 13:21:21,188 - INFO - Pipeline finished successfully.
